@@ -1,0 +1,33 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+.nav{
+    color: black;
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    
+}
+.ul{
+    width:500px;
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    text-align: center;
+    list-style-type: none
+}
+.li{
+    width: 30px;
+    margin: 20px;
+    text-align: center;
+    outline: none;
+  text-decoration: none;
+  list-style-type: none;
+}
+.links{
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    color: black;
+    outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+}
+

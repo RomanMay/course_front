@@ -1,20 +1,21 @@
 .addbutton {
-  border-radius: 0 0 3px 3px;
-  color: #8c8c8c;
-  display: block;
-  flex: 0 0 auto;
-  padding: 10px 20px;
-  font-size: small;
-  height: 18px;
-  cursor: pointer;
-  text-align: center;
-  background-color: #f7f7f7;
+  background-color: #5aac44;
+    box-shadow: 0 1px 0 0 #3f6f21;
+    border: none;
+    color: #fff;
+    margin: 3px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
 
   &:hover {
     background-color: #e2e2e2;
   }
 }
-
+a{
+  outline: none;
+  text-decoration: none;
+}
 .addtext {
   padding: 2%;
   display: flex;

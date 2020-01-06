@@ -68,7 +68,7 @@ class AddButton extends Component {
             className={Styles.addbutton}
             onClick={() => this.toggleTextBox(true)}
           >
-            <a> + {name} </a>
+            {name}
           </div>
         )}
       </div>
