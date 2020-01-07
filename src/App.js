@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { DragDropContext } from "react-dnd";
 import HTML5Backend from "react-dnd-html5-backend";
 import { BrowserRouter as Router, Route, Switch,  Link } from "react-router-dom"
-
+import Timer from "../src/component/Timer/Timer"
 
 import ListContainer from "./container/List";
 import QuickEditor from "./container/QuickEditor";
@@ -18,6 +18,7 @@ class App extends Component {
       <div>
          <div className={styles.app}>
           <ListContainer />
+          
         </div>
         <QuickEditor /> 
 </div>

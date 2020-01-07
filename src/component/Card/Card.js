@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { DragSource } from "react-dnd";
-
+import Timer from "../Timer/Timer"
 import { DragTypes } from "../../constants/DragTypes";
 
 import CardTitle from "./CardTitle";
@@ -74,6 +74,7 @@ class Card extends React.Component {
         onMouseLeave={this.handleMouseLeave}
       >
         <CardTitle title={this.props.title} />
+        <Timer/>
         <button
           ref={this.quickeditorBtn}
           className={Styles.card__btn}

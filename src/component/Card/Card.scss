@@ -9,14 +9,11 @@
   display: flex;
   justify-content: space-between;
 
-  &:hover {
-    background: linear-gradient(to left, #6f9cc2, #8DC26F);
-  }
 
   &__btn {
     display: none;
     border: none;
-    color: white;
+    color: black;
     padding: 3px;
     font-weight: bold;
     cursor: pointer;
@@ -28,11 +25,6 @@
     font-size: 14px;
     color: #8c8c8c;
 
-    &::after {
-      content: "edit";
-      float: right;
-      display: none;
-    }
   }
 
   &__description {
