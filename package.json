@@ -108,7 +108,7 @@
     "extends": "react-app"
   },
   "devDependencies": {
-    "eslint": "^4.10.0"
+    "eslint": "^4.18.2"
   },
   "resolutions": {
     "@babel/runtime": "7.0.0-beta.46"
