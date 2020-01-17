@@ -62,7 +62,12 @@ class CardWrapper extends React.Component {
   render() {
     const { connectDropTarget } = this.props;
 
-    return connectDropTarget(<div>{this.props.children}</div>);
+    return connectDropTarget(
+    <div>
+      {this.props.children}
+      Blya nam pezda
+      </div>
+      );
   }
 }
 

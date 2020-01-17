@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { DragSource } from "react-dnd";
-
+import Timer from "../Timer/Timer"
 import { DragTypes } from "../../constants/DragTypes";
 
 import CardTitle from "./CardTitle";
@@ -52,6 +52,9 @@ class Card extends React.Component {
       scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     return { top: rect.top + scrollTop, left: rect.left + scrollLeft };
   };
+  toggleCalendar = () => {
+    this.setState({ isCalendarOpen: !this.state.isCalendarOpen });
+  };
 
   handleToggleQuickEdit = e => {
     let divOffset = this.offset(e.currentTarget.parentNode);
@@ -81,6 +84,7 @@ class Card extends React.Component {
         >
           ...
         </button>
+        <Timer toggleCalendar={this.toggleCalendar} />
         {/* <CardDescription description={props.description} /> */}
       </section>
      

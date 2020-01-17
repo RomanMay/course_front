@@ -2,24 +2,30 @@ import React, { Component } from "react";
 import { DragDropContext } from "react-dnd";
 import HTML5Backend from "react-dnd-html5-backend";
 import { BrowserRouter as Router, Route, Switch,  Link } from "react-router-dom"
-
-
+import axios from "axios"
 import ListContainer from "./container/List";
 import QuickEditor from "./container/QuickEditor";
 import Login from "./component/auth/Login/Login"
 import Register from "./component/auth/Register/Register"
 import Board from "./component/Board/Board"
-
+import Timer from "../src/component/Timer/Timer"
 import styles from "./App.scss";
 
 class App extends Component {
+  constructor(props){
+    super(props)
+    
+  }
+
   render() {
     return (
       <div>
+        <h1>Status: {this.props.loggedInStatus}</h1>
          <div className={styles.app}>
           <ListContainer />
         </div>
         <QuickEditor /> 
+       
 </div>
 
      

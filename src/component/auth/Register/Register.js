@@ -2,17 +2,17 @@ import React from "react"
 import axios from "axios"
 import {connect} from 'react-redux'
 import {userPostFetch} from '../../../actions/register';
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Redirect , Router, Route, Switch, Link } from "react-router-dom";
 import styles from '../auth.scss'
-class Register extends React.Component{
+export default class Register extends React.Component{
     constructor(props){
         super(props)
         this.state = {
             email: "",
-            password: "",
             first_name:"",
             last_name:"",
-            image: ""
+            image: "",
+            password: ""
             
           }
           this.handleSubmit = this.handleSubmit.bind(this)
@@ -27,33 +27,32 @@ class Register extends React.Component{
       }
     
       handleSubmit = event => {
-        //   const { email, password, first_name, last_name, image } = this.state
-        //   axios.post("http://116.202.105.255:8080/user",
-        //   {
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //         Accept: 'application/json',
-        //       },
-        //       user:{
-        //           email: email,
-        //           first_name: first_name,
-        //           last_name: last_name,
-        //           image: image,
-        //           password: password
-        //       }
-        //   }
-        //   )
-        //   .then(response =>{
-        //       console.log("registration res", response)
-        //       console.log("registration res", response.data)
-        //     .catch(error => {
-        //         console.log("registration error", error)
-        //     })
-        //   })
-        //   console.log("form submited")
+          const { email, password, first_name, last_name, image } = this.state
+          const {history} = this.props
+          axios.post("http://116.202.105.255:8080/user", {
+                email: email,
+                first_name: first_name,
+                last_name: last_name,
+                image: image,
+                password: password   
+          }) .then(response =>{
+              console.log("registration res", response)
+              console.log("registration res data", response.data)
+              
+              if(response.data.statusText === "Created"){
+                this.props.handleSuccessfulAuth(response.data)
+              }
+              
+
+              
+          }).catch(error => {
+            console.log("registration error", error)
+        })
+          console.log("form submited")
         event.preventDefault()
-        this.props.userPostFetch(this.state)
+        // this.props.userPostFetch(this.state)
       }
+
 
 render(){
 return(
@@ -101,6 +100,7 @@ return(
           onChange={this.handleChange}
           required
           /><br/>
+          
         <button type="submit">create</button>
       <p class="message">Already registered? <Link to="/login">Sign In</Link></p>
       </form>
@@ -109,8 +109,8 @@ return(
 }
 }
 
-const mapDispatchToProps = dispatch => ({
-    userPostFetch: userInfo => dispatch(userPostFetch(userInfo))
-  })
+  // const mapDispatchToProps = dispatch => ({
+  //     userPostFetch: userInfo => dispatch(userPostFetch(userInfo))
+  //   })
 
-export default connect(null, mapDispatchToProps)(Register)
+  // export default connect(null, mapDispatchToProps)(Register)
